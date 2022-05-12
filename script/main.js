@@ -1,4 +1,4 @@
-document.querySelector('img').onclick = function () {
+let myImage = document.querySelector('img').onclick = function () {
     let mySrc = myImage.getAttribute('src');
     if (mySrc === 'image/logo.eb1324e44442.svg') {
         myImage.setAttribute('src', 'image/Google_Chrome_icon_(February_2022).svg.png');

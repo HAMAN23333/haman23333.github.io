@@ -3,7 +3,7 @@
 <html lang="zh">
 <head>
     <meta charset="utf-8" />
-    <title>国行 iOS 开启 Apple智能 | HAMAN&#39;s Blog</title>
+    <title>Tags: 工作 | HAMAN&#39;s Blog</title>
     <meta name="author" content="HAMAN" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -37,10 +37,6 @@
 
 
 <script src="/js/lib/preview.js"></script>
-
-
-
-
 
 
 
@@ -154,157 +150,96 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div class="article">
-    <div>
-        <h1>国行 iOS 开启 Apple智能</h1>
-    </div>
-    <div class="info">
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2025/12/30
-        </span>
+            <div id="archives">
+    
+    <div class="categories-tags">
         
-        <span class="category">
-            <a href="/categories/%E6%95%99%E7%A8%8B/">
+        
+        
+        <span>
+            <a href="/tags/Apple/" style="background: #ff7d73">
                 <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                    <i class="fa-solid fa-tags fa-fw"></i>
                 </span>
-                教程
+                Apple
             </a>
         </span>
         
         
-        <span class="tags">
-            <span class="icon">
-                <i class="fa-solid fa-tags fa-fw"></i>
-            </span>
-            
-            
-            <span class="tag">
-                
-                <a href="/tags/Apple/" style="color: #00a596">
-                    Apple
-                </a>
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/AI/" style="color: #ff7d73">
-                    AI
-                </a>
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/iOS/" style="color: #00a596">
-                    iOS
-                </a>
-            </span>
-            
+        
+        <span>
+            <a href="/tags/AI/" style="background: #00a596">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                AI
+            </a>
         </span>
+        
+        
+        
+        <span>
+            <a href="/tags/iOS/" style="background: #ffa2c4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                iOS
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E5%B7%A5%E4%BD%9C/" style="background: linear-gradient(120deg, #9abbf7 0%, #ffbbf4 100%)">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                工作
+            </a>
+        </span>
+        
+        
+        
         
     </div>
     
-    <div class="content" v-pre>
-        <blockquote>
-<p>本教程<strong>不会修改设备型号信息</strong>，因此不会导致爱思助手检测变红，可放心操作。</p>
-</blockquote>
-<hr>
-<h2 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h2><p>在开始之前，请确认已满足以下条件：</p>
-<ol>
-<li><p>iOS 系统版本 <strong>低于 26.2</strong></p>
-</li>
-<li><p>已准备好 <strong>外区 Apple ID</strong></p>
-</li>
-<li><p>电脑端已通过爱思助手安装 <strong>iTunes 运行环境</strong></p>
-<ul>
-<li>个人更推荐使用 <strong>iMazing</strong></li>
-<li>macOS 用户可忽略此项</li>
-</ul>
-</li>
-<li><p>已关闭 <strong>“查找我的 iPhone”</strong></p>
-</li>
-<li><p>系统 <strong>语言与地区</strong> 已提前修改为目标国家&#x2F;地区</p>
-</li>
-<li><p>下载 Apple Intelligence 模型时 <strong>需要代理环境</strong></p>
-</li>
-</ol>
-<hr>
-<h2 id="MobileGestalt-配置文件说明"><a href="#MobileGestalt-配置文件说明" class="headerlink" title="MobileGestalt 配置文件说明"></a>MobileGestalt 配置文件说明</h2><blockquote>
-<p>⚠️ 此步骤为关键环节</p>
-<p>网络上大量教程会同时修改“机型信息”，这是导致爱思助手查询变红的主要原因。</p>
-<p>实际上，本教程<strong>仅修改销售地区字段即可</strong>。</p>
-</blockquote>
-<h3 id="获取-Save-MobileGestalt-快捷指令"><a href="#获取-Save-MobileGestalt-快捷指令" class="headerlink" title="获取 Save MobileGestalt 快捷指令"></a>获取 Save MobileGestalt 快捷指令</h3><ol>
-<li>在 iPhone 上打开并安装快捷指令<br><a target="_blank" rel="noopener" href="https://www.icloud.com/shortcuts/cacca06c1d0e499e8d04cbcd17a12741">Save MobileGestalt</a></li>
-<li>运行快捷指令，依次选择：<br><strong>Manual method → Click here → 文件 → NSString</strong></li>
-<li>全选并复制显示的内容</li>
-<li>在电脑端新建文件，粘贴内容并保存为 <code>com.apple.MobileGestalt.plist</code></li>
-</ol>
-<hr>
-<h3 id="修改-MobileGestalt-配置"><a href="#修改-MobileGestalt-配置" class="headerlink" title="修改 MobileGestalt 配置"></a>修改 MobileGestalt 配置</h3><p>使用文本编辑器打开 <code>com.apple.MobileGestalt.plist</code>，找到以下字段：</p>
-<pre><code>&lt;key&gt;h63QSdBCiT&#x2F;z0WU6rdQv6Q&lt;&#x2F;key&gt;
-&lt;string&gt;CH&lt;&#x2F;string&gt;</code></pre>
-
-<ul>
-<li><p>将 <code>CH</code> 修改为对应的销售地区代码</p>
-<ul>
-<li><code>LL</code>：美国销售地区</li>
-<li><code>ZP</code>：部分新款机型（如 iPhone 16 Pro 台区）</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p><strong>iPhone 15 Pro 及更早机型的销售代码并非 ZP</strong>，请根据实际机型自行查询后再修改。</p>
-</blockquote>
-<hr>
-<h2 id="部署至-iPhone"><a href="#部署至-iPhone" class="headerlink" title="部署至 iPhone"></a>部署至 iPhone</h2><ol>
-<li>使用数据线将 iPhone 连接至电脑</li>
-<li>下载并运行 <a target="_blank" rel="noopener" href="https://github.com/straight-tamago/misaka26/releases/">misaka26</a></li>
-<li>在 misaka26 中打开修改后的 <code>com.apple.MobileGestalt.plist</code></li>
-<li>向下滚动，勾选 <strong>Apple Intelligence</strong></li>
-<li>点击 <strong>Apply</strong>，将配置部署到 iPhone</li>
-</ol>
-<p>部署完成后，设备会自动重启<br>（部分用户反馈需手动关机再开机，属正常现象）</p>
-<hr>
-<h2 id="下载-Apple-Intelligence-模型"><a href="#下载-Apple-Intelligence-模型" class="headerlink" title="下载 Apple Intelligence 模型"></a>下载 Apple Intelligence 模型</h2><ol>
-<li><p>手机重启完成后，启用代理工具连接外网</p>
-<ul>
-<li>美区 ID 建议使用 <strong>美国节点</strong></li>
-<li>其他地区同理</li>
-</ul>
-</li>
-<li><p>进入 <strong>设置 → 语言与地区</strong></p>
-<ul>
-<li>将 <strong>首选语言</strong> 改为「简体中文」</li>
-<li><strong>地区不要改回</strong></li>
-</ul>
-</li>
-<li><p>打开 <strong>Apple 智能与 Siri</strong></p>
-</li>
-<li><p>开始下载 Apple Intelligence 模型</p>
-<ul>
-<li>文件体积约 <strong>6GB 以上</strong></li>
-</ul>
-</li>
-<li><p>下载完成后即可正常使用</p>
-</li>
-</ol>
-<blockquote>
-<p>使用过程中请保持 <strong>App Store 登录状态为外区 Apple ID</strong>。</p>
-</blockquote>
-<hr>
-<h1 id="鸣谢"><a href="#鸣谢" class="headerlink" title="鸣谢"></a>鸣谢</h1><p>该方法来自 Bilibili 用户 <a target="_blank" rel="noopener" href="https://space.bilibili.com/254692473">默示天空</a> </p>
-<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=115607769059673&bvid=BV1WBUUBaEoM&cid=34242496091&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+    <div class="timeline">
+        <div class="timeline-tail"></div>
+        <div class="timeline-content">
+            <div class="item-time">2025/12/30</div>
+            <a href="/2025/12/30/%E6%94%BF%E5%BA%9C%E5%B7%A5%E4%BD%9C%E7%BB%8F%E9%AA%8C%E6%9D%82%E8%B0%88/">
+                <h3>政府工作经验杂谈</h3>
+            </a>
+            <div class="info">
+                
+                <span class="category">
+                    <a href="/categories/%E6%97%A5%E5%B8%B8/">
+                        <span class="icon">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </span>
+                        日常
+                    </a>
+                </span>
+                
+                
+                <span class="tags">
+                    <span class="icon">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </span>
+                    
+                    
+                    <span class="tag">
+                        
+                        <a href="/tags/%E5%B7%A5%E4%BD%9C/" style="color: #ff7d73">
+                            工作
+                        </a>
+                    </span>
+                    
+                </span>
+                
+            </div>
+        </div>
     </div>
-    
-    
-    
-    
-    
-    
     
 </div>
 
@@ -336,12 +271,6 @@
         
     </div>
     <script src="/js/main.js"></script>
-    
-    
-
-
-
-
     
 </body>
 </html>

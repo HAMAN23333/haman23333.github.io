@@ -3,7 +3,7 @@
 <html lang="zh">
 <head>
     <meta charset="utf-8" />
-    <title>国行 iOS 开启 Apple智能 | HAMAN&#39;s Blog</title>
+    <title>政府工作经验杂谈 | HAMAN&#39;s Blog</title>
     <meta name="author" content="HAMAN" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -156,7 +156,7 @@
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <div class="article">
     <div>
-        <h1>国行 iOS 开启 Apple智能</h1>
+        <h1>政府工作经验杂谈</h1>
     </div>
     <div class="info">
         <span class="date">
@@ -167,11 +167,11 @@
         </span>
         
         <span class="category">
-            <a href="/categories/%E6%95%99%E7%A8%8B/">
+            <a href="/categories/%E6%97%A5%E5%B8%B8/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                教程
+                日常
             </a>
         </span>
         
@@ -184,22 +184,8 @@
             
             <span class="tag">
                 
-                <a href="/tags/Apple/" style="color: #00a596">
-                    Apple
-                </a>
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/AI/" style="color: #ff7d73">
-                    AI
-                </a>
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/iOS/" style="color: #00a596">
-                    iOS
+                <a href="/tags/%E5%B7%A5%E4%BD%9C/" style="color: #03a9f4">
+                    工作
                 </a>
             </span>
             
@@ -208,96 +194,26 @@
     </div>
     
     <div class="content" v-pre>
-        <blockquote>
-<p>本教程<strong>不会修改设备型号信息</strong>，因此不会导致爱思助手检测变红，可放心操作。</p>
-</blockquote>
-<hr>
-<h2 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h2><p>在开始之前，请确认已满足以下条件：</p>
-<ol>
-<li><p>iOS 系统版本 <strong>低于 26.2</strong></p>
-</li>
-<li><p>已准备好 <strong>外区 Apple ID</strong></p>
-</li>
-<li><p>电脑端已通过爱思助手安装 <strong>iTunes 运行环境</strong></p>
-<ul>
-<li>个人更推荐使用 <strong>iMazing</strong></li>
-<li>macOS 用户可忽略此项</li>
-</ul>
-</li>
-<li><p>已关闭 <strong>“查找我的 iPhone”</strong></p>
-</li>
-<li><p>系统 <strong>语言与地区</strong> 已提前修改为目标国家&#x2F;地区</p>
-</li>
-<li><p>下载 Apple Intelligence 模型时 <strong>需要代理环境</strong></p>
-</li>
-</ol>
-<hr>
-<h2 id="MobileGestalt-配置文件说明"><a href="#MobileGestalt-配置文件说明" class="headerlink" title="MobileGestalt 配置文件说明"></a>MobileGestalt 配置文件说明</h2><blockquote>
-<p>⚠️ 此步骤为关键环节</p>
-<p>网络上大量教程会同时修改“机型信息”，这是导致爱思助手查询变红的主要原因。</p>
-<p>实际上，本教程<strong>仅修改销售地区字段即可</strong>。</p>
-</blockquote>
-<h3 id="获取-Save-MobileGestalt-快捷指令"><a href="#获取-Save-MobileGestalt-快捷指令" class="headerlink" title="获取 Save MobileGestalt 快捷指令"></a>获取 Save MobileGestalt 快捷指令</h3><ol>
-<li>在 iPhone 上打开并安装快捷指令<br><a target="_blank" rel="noopener" href="https://www.icloud.com/shortcuts/cacca06c1d0e499e8d04cbcd17a12741">Save MobileGestalt</a></li>
-<li>运行快捷指令，依次选择：<br><strong>Manual method → Click here → 文件 → NSString</strong></li>
-<li>全选并复制显示的内容</li>
-<li>在电脑端新建文件，粘贴内容并保存为 <code>com.apple.MobileGestalt.plist</code></li>
-</ol>
-<hr>
-<h3 id="修改-MobileGestalt-配置"><a href="#修改-MobileGestalt-配置" class="headerlink" title="修改 MobileGestalt 配置"></a>修改 MobileGestalt 配置</h3><p>使用文本编辑器打开 <code>com.apple.MobileGestalt.plist</code>，找到以下字段：</p>
-<pre><code>&lt;key&gt;h63QSdBCiT&#x2F;z0WU6rdQv6Q&lt;&#x2F;key&gt;
-&lt;string&gt;CH&lt;&#x2F;string&gt;</code></pre>
+        <p>这是我第一次在自己的博客里碎碎念。我刻意不去过度关注排版，只希望把注意力放在内容本身。</p>
+<p>从小耳濡目染，身边不少人长期与政府部门打交道，那套带有明显苏式风格的酒桌文化也接触得不少。再结合我这些年的工作经历，想借此表达一些个人的思考与体会。</p>
+<h1 id="愣头青的做法"><a href="#愣头青的做法" class="headerlink" title="愣头青的做法"></a>愣头青的做法</h1><p>每次参加市级层面的大型会议，相关领导几乎都会反复强调“网络安全”“日志审计”等要求。有些做事比较实在的人，往往会严格对标文件，把所有设备、所有业务逐一备案，自认为已经落实得相当到位。</p>
+<p>结果却常常是：你觉得自己做得很好，对方却三番五次要求你“整改”。</p>
+<p>问题往往并不在你是否合规，而在于——他们并不是真的想让你改，而是在<strong>暗示你花钱请他们指定的外派单位来“协助整改”</strong>。最终的结果是：单位多花了一笔钱，你还可能因此得罪直属领导，典型的吃力不讨好。</p>
+<h1 id="选择性报告"><a href="#选择性报告" class="headerlink" title="选择性报告"></a>选择性报告</h1><p>不妨回到第一性原则来思考：<br>有些业务、有些设备，<strong>到底有没有必要上报？</strong></p>
+<p>你是涉密单位吗？是公检法系统吗？如果都不是，就应当从事实出发、如实但克制地申报。<br>文件中明确标红、强制要求的内容，认真落实；至于非强制项，完全可以另行评估、再做讨论。</p>
+<p>举个实际例子：<br>教育部门要求共享监控，用于检查校门口是否存在乱停车、安保措施不足等问题。那么我只开放<strong>校门口的监控画面</strong>即可。至于校内大量融合服务器，本身没有任何业务对公网开放，也没有现实必要主动“加戏”，完全可以暂缓处理。</p>
+<h1 id="减少不稳定因素"><a href="#减少不稳定因素" class="headerlink" title="减少不稳定因素"></a>减少不稳定因素</h1><p>再极端一点思考：<br>有些业务，<strong>真的非公网部署不可吗？</strong></p>
+<p>比如远程控制 LED 大屏，你可能装了向日葵，或者更“高级”一些用 RustDesk，甚至 ZeroTier 一类的方案一股脑全上。但本质上，这些东西都有漏洞，也迟早会被人盯上。</p>
+<p>那不如回归最原始、也最稳妥的方案：<br><strong>彻底断开外网。</strong><br>需要开启设备时，直接电话联系安保人员，由他们进行开闸、闭闸操作，把主动权牢牢掌握在自己手里。说句不好听的，你都读过大学了，有些“基本盘”确实就吃这一套潜规则。</p>
+<p>同样的逻辑也适用于服务器管理：<br>学校服务器上不用的业务，统统关掉；<br>防火墙上用不到的端口，一个都不要暴露。</p>
+<p>现在网安检查的常态化操作，已经变成了：让外包公司的人直接<strong>暴力扫描教育网端口</strong>。一旦扫到问题，基本就是“算你倒霉”，等着被点名通报。</p>
+<h1 id="曲线救国"><a href="#曲线救国" class="headerlink" title="曲线救国"></a>曲线救国</h1><p>还有一种常见情况：<br>政府要求所有网站统一部署到指定服务器、统一备案。</p>
+<p>但现实是：<br>一旦真的出了问题，哪怕网站是他们指定的公司搭建的，锅照样可以毫不犹豫地甩回给你。</p>
+<p>如果你所在的是集团单位，其实完全可以“曲线救国”：<br>由总部统一备案、统一部署，学校只作为宣传主体存在。<br>业务跑在总部服务器上，用总部的名义对外展示，一样可以达到宣传和合规的最终目的，同时还能有效降低风险。</p>
+<h1 id="别太放心上"><a href="#别太放心上" class="headerlink" title="别太放心上"></a>别太放心上</h1><p>最后说一句可能不太“政治正确”的话：<br>领导让你参加的那些会议，<strong>通常都不是什么真正重要的会议</strong>。真正重要的，领导自己会去。</p>
+<p>你的任务很简单：<br>按时签到，手机电量充满；<br>开会时安静坐着，自己刷手机；<br>找个合适的时间拍一张现场照片，留个痕迹。</p>
+<p>至此，你的任务就已经完成了。</p>
 
-<ul>
-<li><p>将 <code>CH</code> 修改为对应的销售地区代码</p>
-<ul>
-<li><code>LL</code>：美国销售地区</li>
-<li><code>ZP</code>：部分新款机型（如 iPhone 16 Pro 台区）</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p><strong>iPhone 15 Pro 及更早机型的销售代码并非 ZP</strong>，请根据实际机型自行查询后再修改。</p>
-</blockquote>
-<hr>
-<h2 id="部署至-iPhone"><a href="#部署至-iPhone" class="headerlink" title="部署至 iPhone"></a>部署至 iPhone</h2><ol>
-<li>使用数据线将 iPhone 连接至电脑</li>
-<li>下载并运行 <a target="_blank" rel="noopener" href="https://github.com/straight-tamago/misaka26/releases/">misaka26</a></li>
-<li>在 misaka26 中打开修改后的 <code>com.apple.MobileGestalt.plist</code></li>
-<li>向下滚动，勾选 <strong>Apple Intelligence</strong></li>
-<li>点击 <strong>Apply</strong>，将配置部署到 iPhone</li>
-</ol>
-<p>部署完成后，设备会自动重启<br>（部分用户反馈需手动关机再开机，属正常现象）</p>
-<hr>
-<h2 id="下载-Apple-Intelligence-模型"><a href="#下载-Apple-Intelligence-模型" class="headerlink" title="下载 Apple Intelligence 模型"></a>下载 Apple Intelligence 模型</h2><ol>
-<li><p>手机重启完成后，启用代理工具连接外网</p>
-<ul>
-<li>美区 ID 建议使用 <strong>美国节点</strong></li>
-<li>其他地区同理</li>
-</ul>
-</li>
-<li><p>进入 <strong>设置 → 语言与地区</strong></p>
-<ul>
-<li>将 <strong>首选语言</strong> 改为「简体中文」</li>
-<li><strong>地区不要改回</strong></li>
-</ul>
-</li>
-<li><p>打开 <strong>Apple 智能与 Siri</strong></p>
-</li>
-<li><p>开始下载 Apple Intelligence 模型</p>
-<ul>
-<li>文件体积约 <strong>6GB 以上</strong></li>
-</ul>
-</li>
-<li><p>下载完成后即可正常使用</p>
-</li>
-</ol>
-<blockquote>
-<p>使用过程中请保持 <strong>App Store 登录状态为外区 Apple ID</strong>。</p>
-</blockquote>
-<hr>
-<h1 id="鸣谢"><a href="#鸣谢" class="headerlink" title="鸣谢"></a>鸣谢</h1><p>该方法来自 Bilibili 用户 <a target="_blank" rel="noopener" href="https://space.bilibili.com/254692473">默示天空</a> </p>
-<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=115607769059673&bvid=BV1WBUUBaEoM&cid=34242496091&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
     </div>
     
     

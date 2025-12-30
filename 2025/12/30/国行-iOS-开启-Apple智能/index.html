@@ -3,7 +3,7 @@
 <html lang="zh">
 <head>
     <meta charset="utf-8" />
-    <title>Categories | HAMAN&#39;s Blog</title>
+    <title>国行 iOS 开启 Apple智能 | HAMAN&#39;s Blog</title>
     <meta name="author" content="HAMAN" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -37,6 +37,10 @@
 
 
 <script src="/js/lib/preview.js"></script>
+
+
+
+
 
 
 
@@ -150,14 +154,20 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="archives">
-    
-    <div class="categories-tags">
+            <div class="article">
+    <div>
+        <h1>国行 iOS 开启 Apple智能</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/12/30
+        </span>
         
-        
-        
-        <span>
-            <a href="/categories/%E6%95%99%E7%A8%8B/" style="background: #00bcd4">
+        <span class="category">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
@@ -166,7 +176,77 @@
         </span>
         
         
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/Apple/" style="color: #00bcd4">
+                    Apple
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/iPhone/" style="color: #ffa2c4">
+                    iPhone
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/AI/" style="color: #00bcd4">
+                    AI
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/iOS/" style="color: #03a9f4">
+                    iOS
+                </a>
+            </span>
+            
+        </span>
+        
     </div>
+    
+    <div class="content" v-pre>
+        <blockquote>
+<p>此教程不会修改设备型号，爱思助手不会变红，可以放心修改</p>
+</blockquote>
+<hr>
+<h1 id="前提要求"><a href="#前提要求" class="headerlink" title="前提要求"></a>前提要求</h1><ol>
+<li>iOS 系统要求低于 26.2</li>
+<li>已经拥有外区账号</li>
+<li>电脑上用爱思助手提前安装 iTunes 环境 (个人更推荐iMazing)</li>
+<li>需要关闭查找我的 iPhone</li>
+<li>下载 AI 模型需要代理，代理地区要和 Apple ID 的地区对应<blockquote>
+<p>如果你是台区账号，代理工具需要切换到台湾地区，其他地区同理</p>
+</blockquote>
+</li>
+</ol>
+<h1 id="获取-MobileGestalt-配置文件"><a href="#获取-MobileGestalt-配置文件" class="headerlink" title="获取 MobileGestalt 配置文件"></a>获取 MobileGestalt 配置文件</h1><p>这一步是重点，网上大部分教程连同机型都修改了，这是导致爱思查询变红的原因，实际上只需要修改一处。</p>
+<h2 id="获取-Save-MobileGestalt-快捷指令"><a href="#获取-Save-MobileGestalt-快捷指令" class="headerlink" title="获取 Save MobileGestalt 快捷指令"></a>获取 Save MobileGestalt 快捷指令</h2><p>在 Apple 移动端下载 <a target="_blank" rel="noopener" href="https://www.icloud.com/shortcuts/cacca06c1d0e499e8d04cbcd17a12741">Save MobileGestalt</a> 快捷指令并运行，点击 Manual method → Click here → 文件 → NSString → 全选并复制内容到电脑端，保存文件名为 com.apple.MobileGestalt.plist</p>
+<h2 id="修改-MobileGestalt"><a href="#修改-MobileGestalt" class="headerlink" title="修改 MobileGestalt"></a>修改 MobileGestalt</h2><p>编辑 com.apple.MobileGestalt.plist，将<strong>CH</strong>修改<strong>LL</strong>，对应美国销售地区</p>
+<p> 我自己是 iPhone16 Pro 且还是台区账号，所以修改为<strong>ZP</strong>，iPhone 15 Pro之前的销售代码并不是<strong>ZP</strong>，需要自行查询</p>
+<pre><code class="language-xml">&lt;key&gt;h63QSdBCiT/z0WU6rdQv6Q&lt;/key&gt;
+&lt;string&gt;CH&lt;/string&gt;
+</code></pre>
+<h1 id="部署到-iPhone"><a href="#部署到-iPhone" class="headerlink" title="部署到 iPhone"></a>部署到 iPhone</h1><p>将 iPhone 通过数据线连接到 Mac，从 misaka26 打开这个 plist，下滑勾选 Apple Intelligence，然后确定部署到 iPhone。</p>
+<p>iPhone 会自动重启（部分用户反馈需要自行关机再启动），重启完成后即可进入下一步。</p>
+<h1 id="鸣谢"><a href="#鸣谢" class="headerlink" title="鸣谢"></a>鸣谢</h1><p>该方法来自 Bilibili 用户 <a target="_blank" rel="noopener" href="https://space.bilibili.com/254692473">默示天空</a> </p>
+<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=115607769059673&bvid=BV1WBUUBaEoM&cid=34242496091&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+    </div>
+    
+    
+    
+    
+    
+    
     
 </div>
 
@@ -198,6 +278,12 @@
         
     </div>
     <script src="/js/main.js"></script>
+    
+    
+
+
+
+
     
 </body>
 </html>

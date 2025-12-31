@@ -190,14 +190,14 @@
                 
                 <span class="tag">
                     
-                    <a href="/tags/%E5%B7%A5%E4%BD%9C/" style="color: #ffa2c4">
+                    <a href="/tags/%E5%B7%A5%E4%BD%9C/" style="color: #ff7d73">
                         工作
                     </a>
                 </span>
                 
                 <span class="tag">
                     
-                    <a href="/tags/Python/" style="color: #03a9f4">
+                    <a href="/tags/Python/" style="color: #00a596">
                         Python
                     </a>
                 </span>
@@ -215,13 +215,13 @@
 
 def get_token():
     # 登录请求参数
-    url = &quot;http://192.168.6.230:81/api/v2/auth&quot;
+    url = &quot;http://192.168.XXX.XXX:81/api/v2/auth&quot; 
     params = {
         &quot;userinfo&quot;: &quot;true&quot;,
         &quot;withRoles&quot;: &quot;true&quot;,
         &quot;withUsersConfig&quot;: &quot;true&quot;,
-        &quot;name&quot;: &quot;admin&quot;,
-        &quot;password&quot;: &quot;123456&quot;
+        &quot;name&quot;: &quot;XXXXXXXXXXXXXXXXXXXX&quot;,
+        &quot;password&quot;: &quot;XXXXXXXXXXXXXXXXXXXXXXX&quot;
     }
     
     # 构造请求头（根据提供的请求标头）
@@ -230,8 +230,8 @@ def get_token():
         &quot;Accept-Encoding&quot;: &quot;gzip, deflate&quot;,
         &quot;Accept-Language&quot;: &quot;zh-CN,zh-TW;q=0.9,zh;q=0.8,en-US;q=0.7,en;q=0.6&quot;,
         &quot;Connection&quot;: &quot;keep-alive&quot;,
-        &quot;Host&quot;: &quot;192.168.6.230:81&quot;,
-        &quot;Referer&quot;: &quot;http://192.168.6.230:81/login&quot;,
+        &quot;Host&quot;: &quot;192.168.XXX.XXX:81&quot;,
+        &quot;Referer&quot;: &quot;http://192.168.XXX.XXX:81/login&quot;,
         &quot;User-Agent&quot;: &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0&quot;,
         &quot;X-Requested-With&quot;: &quot;XMLHttpRequest&quot;
     }
@@ -262,14 +262,14 @@ import time
 
 def get_download_url(token):
     # 获取文件下载地址
-    url = &quot;http://192.168.6.230:81/api/v2/backup&quot;
+    url = &quot;http://192.168.XXX.XXX:81/api/v2/backup&quot;
     params = {&quot;database&quot;: &quot;true&quot;, &quot;medias&quot;: &quot;true&quot;}
     
     headers = {
         &quot;Authorization&quot;: token,
         &quot;Accept&quot;: &quot;application/json, text/plain, */*&quot;,
-        &quot;Host&quot;: &quot;192.168.6.230:81&quot;,
-        &quot;Referer&quot;: &quot;http://192.168.6.230:81/system/servers&quot;,
+        &quot;Host&quot;: &quot;192.168.XXX.XXX:81&quot;,
+        &quot;Referer&quot;: &quot;http://192.168.XXX.XXX:81/system/servers&quot;,
         &quot;User-Agent&quot;: &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0&quot;,
         &quot;X-Requested-With&quot;: &quot;XMLHttpRequest&quot;
     }

@@ -46,6 +46,9 @@
 
 
 
+<script src="/js/lib/toc.js"></script>
+
+
 <link rel="stylesheet" href="/css/main.css" />
 
 <meta name="generator" content="Hexo 8.1.1"></head>
@@ -154,61 +157,65 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div class="article">
-    <div>
-        <h1>国行 iOS 开启 Apple智能</h1>
-    </div>
-    <div class="info">
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2025/12/30
-        </span>
-        
-        <span class="category">
-            <a href="/categories/%E6%95%99%E7%A8%8B/">
+            
+
+<div class="post-main-wrapper has-toc">
+    <div class="article">
+        <div>
+            <h1>国行 iOS 开启 Apple智能</h1>
+        </div>
+        <div class="info">
+            <span class="date">
                 <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                    <i class="fa-solid fa-calendar fa-fw"></i>
                 </span>
-                教程
-            </a>
-        </span>
-        
-        
-        <span class="tags">
-            <span class="icon">
-                <i class="fa-solid fa-tags fa-fw"></i>
+                2025/12/30
             </span>
             
-            
-            <span class="tag">
-                
-                <a href="/tags/Apple/" style="color: #00a596">
-                    Apple
+            <span class="category">
+                <a href="/categories/%E6%95%99%E7%A8%8B/">
+                    <span class="icon">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                    </span>
+                    教程
                 </a>
             </span>
             
-            <span class="tag">
+            
+            <span class="tags">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
                 
-                <a href="/tags/AI/" style="color: #ff7d73">
-                    AI
-                </a>
+                
+                <span class="tag">
+                    
+                    <a href="/tags/Apple/" style="color: #00bcd4">
+                        Apple
+                    </a>
+                </span>
+                
+                <span class="tag">
+                    
+                    <a href="/tags/AI/" style="color: #ff7d73">
+                        AI
+                    </a>
+                </span>
+                
+                <span class="tag">
+                    
+                    <a href="/tags/iOS/" style="color: #00a596">
+                        iOS
+                    </a>
+                </span>
+                
             </span>
             
-            <span class="tag">
-                
-                <a href="/tags/iOS/" style="color: #00a596">
-                    iOS
-                </a>
-            </span>
-            
-        </span>
+        </div>
+
         
-    </div>
-    
-    <div class="content" v-pre>
-        <blockquote>
+            <div class="content" v-pre>
+                <blockquote>
 <p>本教程<strong>不会修改设备型号信息</strong>，因此不会导致爱思助手检测变红，可放心操作。</p>
 </blockquote>
 <hr>
@@ -231,6 +238,8 @@
 <li><p>下载 Apple Intelligence 模型时 <strong>需要代理环境</strong></p>
 </li>
 </ol>
+<span id="more"></span>
+
 <hr>
 <h2 id="MobileGestalt-配置文件说明"><a href="#MobileGestalt-配置文件说明" class="headerlink" title="MobileGestalt 配置文件说明"></a>MobileGestalt 配置文件说明</h2><blockquote>
 <p>⚠️ 此步骤为关键环节</p>
@@ -245,9 +254,9 @@
 </ol>
 <hr>
 <h3 id="修改-MobileGestalt-配置"><a href="#修改-MobileGestalt-配置" class="headerlink" title="修改 MobileGestalt 配置"></a>修改 MobileGestalt 配置</h3><p>使用文本编辑器打开 <code>com.apple.MobileGestalt.plist</code>，找到以下字段：</p>
-<pre><code>&lt;key&gt;h63QSdBCiT&#x2F;z0WU6rdQv6Q&lt;&#x2F;key&gt;
-&lt;string&gt;CH&lt;&#x2F;string&gt;</code></pre>
-
+<pre><code class="language-xml">&lt;key&gt;h63QSdBCiT/z0WU6rdQv6Q&lt;/key&gt;
+&lt;string&gt;CH&lt;/string&gt;
+</code></pre>
 <ul>
 <li><p>将 <code>CH</code> 修改为对应的销售地区代码</p>
 <ul>
@@ -298,16 +307,37 @@
 <hr>
 <h1 id="鸣谢"><a href="#鸣谢" class="headerlink" title="鸣谢"></a>鸣谢</h1><p>该方法来自 Bilibili 用户 <a target="_blank" rel="noopener" href="https://space.bilibili.com/254692473">默示天空</a> </p>
 <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=115607769059673&bvid=BV1WBUUBaEoM&cid=34242496091&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+            </div>
+        
+
+        
+            <div class="comments-section">
+                
+                
+                
+                
+            </div>
+        
     </div>
+
+     <aside class="toc-sidebar">
+        
+            <div class="toc-wrapper">
+                <div class="toc-header">
+                    <i class="fa-solid fa-list"></i> 目录
+                </div>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E6%8F%90%E6%9D%A1%E4%BB%B6"><span class="toc-number">1.</span> <span class="toc-text">前提条件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MobileGestalt-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E"><span class="toc-number">2.</span> <span class="toc-text">MobileGestalt 配置文件说明</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96-Save-MobileGestalt-%E5%BF%AB%E6%8D%B7%E6%8C%87%E4%BB%A4"><span class="toc-number">2.1.</span> <span class="toc-text">获取 Save MobileGestalt 快捷指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9-MobileGestalt-%E9%85%8D%E7%BD%AE"><span class="toc-number">2.2.</span> <span class="toc-text">修改 MobileGestalt 配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2%E8%87%B3-iPhone"><span class="toc-number">3.</span> <span class="toc-text">部署至 iPhone</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD-Apple-Intelligence-%E6%A8%A1%E5%9E%8B"><span class="toc-number">4.</span> <span class="toc-text">下载 Apple Intelligence 模型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%B8%A3%E8%B0%A2"><span class="toc-number">5.</span> <span class="toc-text">鸣谢</span></a></li></ol>
+            </div>
     
-    
-    
-    
-    
-    
+    <div class="toc-nav-buttons">
+                <a href="javascript:;" onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="toc-btn" title="回到顶部">
+                    <i class="fa-solid fa-arrow-up"></i> 顶部
+                </a>
+            </div>
+        
+</aside> 
     
 </div>
-
             <footer id="footer">
     <div id="footer-wrap">
         <div>

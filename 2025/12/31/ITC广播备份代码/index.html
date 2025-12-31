@@ -3,7 +3,7 @@
 <html lang="zh">
 <head>
     <meta charset="utf-8" />
-    <title>国行 iOS 开启 Apple智能 | HAMAN&#39;s Blog</title>
+    <title>ITC广播备份代码 | HAMAN&#39;s Blog</title>
     <meta name="author" content="HAMAN" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -162,22 +162,22 @@
 <div class="post-main-wrapper has-toc">
     <div class="article">
         <div>
-            <h1>国行 iOS 开启 Apple智能</h1>
+            <h1>ITC广播备份代码</h1>
         </div>
         <div class="info">
             <span class="date">
                 <span class="icon">
                     <i class="fa-solid fa-calendar fa-fw"></i>
                 </span>
-                2025/12/30
+                2025/12/31
             </span>
             
             <span class="category">
-                <a href="/categories/%E6%95%99%E7%A8%8B/">
+                <a href="/categories/Code/">
                     <span class="icon">
                         <i class="fa-solid fa-bookmark fa-fw"></i>
                     </span>
-                    教程
+                    Code
                 </a>
             </span>
             
@@ -190,22 +190,15 @@
                 
                 <span class="tag">
                     
-                    <a href="/tags/Apple/" style="color: #ffa2c4">
-                        Apple
+                    <a href="/tags/%E5%B7%A5%E4%BD%9C/" style="color: #ffa2c4">
+                        工作
                     </a>
                 </span>
                 
                 <span class="tag">
                     
-                    <a href="/tags/AI/" style="color: #03a9f4">
-                        AI
-                    </a>
-                </span>
-                
-                <span class="tag">
-                    
-                    <a href="/tags/iOS/" style="color: #00bcd4">
-                        iOS
+                    <a href="/tags/Python/" style="color: #03a9f4">
+                        Python
                     </a>
                 </span>
                 
@@ -215,98 +208,136 @@
 
         
             <div class="content" v-pre>
-                <blockquote>
-<p>本教程<strong>不会修改设备型号信息</strong>，因此不会导致爱思助手检测变红，可放心操作。</p>
-</blockquote>
-<hr>
-<h2 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h2><p>在开始之前，请确认已满足以下条件：</p>
-<ol>
-<li><p>iOS 系统版本 <strong>低于 26.2</strong></p>
-</li>
-<li><p>已准备好 <strong>外区 Apple ID</strong></p>
-</li>
-<li><p>电脑端已通过爱思助手安装 <strong>iTunes 运行环境</strong></p>
-<ul>
-<li>个人更推荐使用 <strong>iMazing</strong></li>
-<li>macOS 用户可忽略此项</li>
-</ul>
-</li>
-<li><p>已关闭 <strong>“查找我的 iPhone”</strong></p>
-</li>
-<li><p>系统 <strong>语言与地区</strong> 已提前修改为目标国家&#x2F;地区</p>
-</li>
-<li><p>下载 Apple Intelligence 模型时 <strong>需要代理环境</strong></p>
-</li>
-</ol>
+                <p>他家的设备说明书也像是3岁小孩写的，机器自带的备份几乎无法使用，只能通过网页爬虫全局下载备份，自己手撸了个脚本。</p>
 <span id="more"></span>
 
-<hr>
-<h2 id="MobileGestalt-配置文件说明"><a href="#MobileGestalt-配置文件说明" class="headerlink" title="MobileGestalt 配置文件说明"></a>MobileGestalt 配置文件说明</h2><blockquote>
-<p>⚠️ 此步骤为关键环节</p>
-<p>网络上大量教程会同时修改“机型信息”，这是导致爱思助手查询变红的主要原因。</p>
-<p>实际上，本教程<strong>仅修改销售地区字段即可</strong>。</p>
-</blockquote>
-<h3 id="获取-Save-MobileGestalt-快捷指令"><a href="#获取-Save-MobileGestalt-快捷指令" class="headerlink" title="获取 Save MobileGestalt 快捷指令"></a>获取 Save MobileGestalt 快捷指令</h3><ol>
-<li>在 iPhone 上打开并安装快捷指令<br><a target="_blank" rel="noopener" href="https://www.icloud.com/shortcuts/cacca06c1d0e499e8d04cbcd17a12741">Save MobileGestalt</a></li>
-<li>运行快捷指令，依次选择：<br><strong>Manual method → Click here → 文件 → NSString</strong></li>
-<li>全选并复制显示的内容</li>
-<li>在电脑端新建文件，粘贴内容并保存为 <code>com.apple.MobileGestalt.plist</code></li>
-</ol>
-<hr>
-<h3 id="修改-MobileGestalt-配置"><a href="#修改-MobileGestalt-配置" class="headerlink" title="修改 MobileGestalt 配置"></a>修改 MobileGestalt 配置</h3><p>使用文本编辑器打开 <code>com.apple.MobileGestalt.plist</code>，找到以下字段：</p>
-<pre><code class="language-xml">&lt;key&gt;h63QSdBCiT/z0WU6rdQv6Q&lt;/key&gt;
-&lt;string&gt;CH&lt;/string&gt;
+<h1 id="获取-token-参数"><a href="#获取-token-参数" class="headerlink" title="获取 token 参数"></a>获取 token 参数</h1><pre><code class="language-python">import requests
+
+def get_token():
+    # 登录请求参数
+    url = &quot;http://192.168.6.230:81/api/v2/auth&quot;
+    params = {
+        &quot;userinfo&quot;: &quot;true&quot;,
+        &quot;withRoles&quot;: &quot;true&quot;,
+        &quot;withUsersConfig&quot;: &quot;true&quot;,
+        &quot;name&quot;: &quot;admin&quot;,
+        &quot;password&quot;: &quot;123456&quot;
+    }
+    
+    # 构造请求头（根据提供的请求标头）
+    headers = {
+        &quot;Accept&quot;: &quot;application/json, text/plain, */*&quot;,
+        &quot;Accept-Encoding&quot;: &quot;gzip, deflate&quot;,
+        &quot;Accept-Language&quot;: &quot;zh-CN,zh-TW;q=0.9,zh;q=0.8,en-US;q=0.7,en;q=0.6&quot;,
+        &quot;Connection&quot;: &quot;keep-alive&quot;,
+        &quot;Host&quot;: &quot;192.168.6.230:81&quot;,
+        &quot;Referer&quot;: &quot;http://192.168.6.230:81/login&quot;,
+        &quot;User-Agent&quot;: &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0&quot;,
+        &quot;X-Requested-With&quot;: &quot;XMLHttpRequest&quot;
+    }
+    
+    try:
+        response = requests.get(url, params=params, headers=headers, timeout=10)
+        
+        if response.status_code == 200:
+            data = response.json()
+            
+            # 修改点：从嵌套结构中提取 token
+            token = data.get(&#39;result&#39;, {}).get(&#39;token&#39;)
+            return token
+        else:
+            print(f&quot;请求失败，状态码：{response.status_code}，响应内容：{response.text}&quot;)
+            return None
+            
+    
+    except requests.exceptions.RequestException as e:
+        print(&quot;请求发生异常：&quot;, str(e))
+        return None
+    except ValueError as e:
+        print(&quot;JSON 解析失败：&quot;, str(e))
+        return None
 </code></pre>
-<ul>
-<li><p>将 <code>CH</code> 修改为对应的销售地区代码</p>
-<ul>
-<li><code>LL</code>：美国销售地区</li>
-<li><code>ZP</code>：部分新款机型（如 iPhone 16 Pro 台区）</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p><strong>iPhone 15 Pro 及更早机型的销售代码并非 ZP</strong>，请根据实际机型自行查询后再修改。</p>
-</blockquote>
-<hr>
-<h2 id="部署至-iPhone"><a href="#部署至-iPhone" class="headerlink" title="部署至 iPhone"></a>部署至 iPhone</h2><ol>
-<li>使用数据线将 iPhone 连接至电脑</li>
-<li>下载并运行 <a target="_blank" rel="noopener" href="https://github.com/straight-tamago/misaka26/releases/">misaka26</a></li>
-<li>在 misaka26 中打开修改后的 <code>com.apple.MobileGestalt.plist</code></li>
-<li>向下滚动，勾选 <strong>Apple Intelligence</strong></li>
-<li>点击 <strong>Apply</strong>，将配置部署到 iPhone</li>
-</ol>
-<p>部署完成后，设备会自动重启<br>（部分用户反馈需手动关机再开机，属正常现象）</p>
-<hr>
-<h2 id="下载-Apple-Intelligence-模型"><a href="#下载-Apple-Intelligence-模型" class="headerlink" title="下载 Apple Intelligence 模型"></a>下载 Apple Intelligence 模型</h2><ol>
-<li><p>手机重启完成后，启用代理工具连接外网</p>
-<ul>
-<li>美区 ID 建议使用 <strong>美国节点</strong></li>
-<li>其他地区同理</li>
-</ul>
-</li>
-<li><p>进入 <strong>设置 → 语言与地区</strong></p>
-<ul>
-<li>将 <strong>首选语言</strong> 改为「简体中文」</li>
-<li><strong>地区不要改回</strong></li>
-</ul>
-</li>
-<li><p>打开 <strong>Apple 智能与 Siri</strong></p>
-</li>
-<li><p>开始下载 Apple Intelligence 模型</p>
-<ul>
-<li>文件体积约 <strong>6GB 以上</strong></li>
-</ul>
-</li>
-<li><p>下载完成后即可正常使用</p>
-</li>
-</ol>
-<blockquote>
-<p>使用过程中请保持 <strong>App Store 登录状态为外区 Apple ID</strong>。</p>
-</blockquote>
-<hr>
-<h1 id="鸣谢"><a href="#鸣谢" class="headerlink" title="鸣谢"></a>鸣谢</h1><p>该方法来自 Bilibili 用户 <a target="_blank" rel="noopener" href="https://space.bilibili.com/254692473">默示天空</a> </p>
-<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=115607769059673&bvid=BV1WBUUBaEoM&cid=34242496091&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><pre><code class="language-python">import requests
+import time
+
+def get_download_url(token):
+    # 获取文件下载地址
+    url = &quot;http://192.168.6.230:81/api/v2/backup&quot;
+    params = {&quot;database&quot;: &quot;true&quot;, &quot;medias&quot;: &quot;true&quot;}
+    
+    headers = {
+        &quot;Authorization&quot;: token,
+        &quot;Accept&quot;: &quot;application/json, text/plain, */*&quot;,
+        &quot;Host&quot;: &quot;192.168.6.230:81&quot;,
+        &quot;Referer&quot;: &quot;http://192.168.6.230:81/system/servers&quot;,
+        &quot;User-Agent&quot;: &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0&quot;,
+        &quot;X-Requested-With&quot;: &quot;XMLHttpRequest&quot;
+    }
+
+    try:
+        response = requests.get(url, params=params, headers=headers, timeout=60)
+        if response.status_code == 200:
+            return response.json()[&#39;result&#39;][&#39;url&#39;].replace(&#39;\\/&#39;, &#39;/&#39;)
+        print(f&quot;获取下载地址失败，状态码：{response.status_code}&quot;)
+        return None
+    except Exception as e:
+        print(f&quot;获取下载地址异常：{str(e)}&quot;)
+        return None
+
+def download_file(download_url, token):
+    # 执行文件下载
+    try:
+        headers = {&quot;Authorization&quot;: token}
+        
+        with requests.get(download_url, headers=headers, stream=True, timeout=30) as r:
+            r.raise_for_status()
+            
+            # 生成带时间戳的文件名
+            filename = f&quot;{download_url.split(&#39;/&#39;)[-1].split(&#39;.&#39;)[0]}_{int(time.time())}.zip&quot;
+            
+            with open(filename, &#39;wb&#39;) as f:
+                for chunk in r.iter_content(chunk_size=8192):
+                    if chunk:
+                        f.write(chunk)
+            return filename
+        return None
+    except Exception as e:
+        print(f&quot;下载文件异常：{str(e)}&quot;)
+        return None
+</code></pre>
+<h1 id="MAIN"><a href="#MAIN" class="headerlink" title="MAIN"></a>MAIN</h1><pre><code class="language-python">from auth import get_token
+from downloader import get_download_url, download_file
+
+def main():
+    # 第一步：获取token
+    print(&quot;正在获取访问令牌...&quot;)
+    token = get_token()
+    
+    if not token:
+        print(&quot;❌ 认证失败，程序终止&quot;)
+        return
+
+    # 第二步：获取下载地址
+    print(&quot;🔄 正在获取下载地址...&quot;)
+    download_url = get_download_url(token)
+    
+    if not download_url:
+        print(&quot;❌ 获取下载地址失败&quot;)
+        return
+
+    # 第三步：执行下载
+    print(f&quot;⏬ 开始下载文件：{download_url}&quot;)
+    saved_file = download_file(download_url, token)
+    
+    if saved_file:
+        print(f&quot;✅ 文件下载成功：{saved_file}&quot;)
+    else:
+        print(&quot;❌ 文件下载失败&quot;)
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+
             </div>
         
 
@@ -326,7 +357,7 @@
                 <div class="toc-header">
                     <i class="fa-solid fa-list"></i> 目录
                 </div>
-                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E6%8F%90%E6%9D%A1%E4%BB%B6"><span class="toc-number">1.</span> <span class="toc-text">前提条件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MobileGestalt-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E"><span class="toc-number">2.</span> <span class="toc-text">MobileGestalt 配置文件说明</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96-Save-MobileGestalt-%E5%BF%AB%E6%8D%B7%E6%8C%87%E4%BB%A4"><span class="toc-number">2.1.</span> <span class="toc-text">获取 Save MobileGestalt 快捷指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9-MobileGestalt-%E9%85%8D%E7%BD%AE"><span class="toc-number">2.2.</span> <span class="toc-text">修改 MobileGestalt 配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2%E8%87%B3-iPhone"><span class="toc-number">3.</span> <span class="toc-text">部署至 iPhone</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD-Apple-Intelligence-%E6%A8%A1%E5%9E%8B"><span class="toc-number">4.</span> <span class="toc-text">下载 Apple Intelligence 模型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%B8%A3%E8%B0%A2"><span class="toc-number">5.</span> <span class="toc-text">鸣谢</span></a></li></ol>
+                <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96-token-%E5%8F%82%E6%95%B0"><span class="toc-number">1.</span> <span class="toc-text">获取 token 参数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD"><span class="toc-number">2.</span> <span class="toc-text">下载</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#MAIN"><span class="toc-number">3.</span> <span class="toc-text">MAIN</span></a></li></ol>
             </div>
     
     <div class="toc-nav-buttons">
